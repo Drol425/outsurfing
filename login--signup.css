@@ -1,0 +1,178 @@
+html{
+    height: 100%;
+    min-height: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: url(background.jpg) no-repeat;
+    background-position: center center;        
+    background-attachment: fixed;      
+    background-size: cover;  
+    min-height: 100%;
+
+}
+a{
+    margin: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+}
+form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: auto;
+    padding-bottom: 10%;
+    background: rgba(0, 0, 0, 0.562);
+    border-radius: 0px 50px 0px;
+}
+form img{
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+}
+#inputs{
+    position: relative;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 50%;
+}
+#helper_sub{
+    position: relative;
+    width: 90%;
+    top: 10px;
+    left: 2%;
+    /* background: red; */
+}
+#help_info{
+    position: relative;
+    width: 60%;
+    top:5%;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    /* margin-top: 5%; */
+    font-size: 20px;
+}
+#help_info i{
+    cursor: pointer;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+#help_info a{
+    margin: 2%;
+    /* padding: 0; */
+}
+#inputs a{
+    font-size: 13px;
+}
+form input{
+    position: relative;
+    margin: 5px;
+    width: 90%;
+    height: 35px;
+    border-radius: 50px 50px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.116);
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 10px;
+    color: rgb(255, 255, 255);
+}
+form input[type="text"]{
+    display: inline-block;
+    width: 42.5%;
+}
+form input[type="submit"]{
+    position: relative;
+    background-color: rgb(255, 0, 43);
+    margin-top: -5%;
+    width: 40%;
+    height: 36px;
+    float: right;
+    right: 0%;
+    cursor: pointer;
+}
+form input::-webkit-input-placeholder {
+    color: white;
+} 
+form input::-moz-placeholder {
+    color: white;
+}
+
+@media only screen and (max-width: 750px){
+    form{
+        width: auto;
+        height: 60%;
+        /* height: 50%; */
+    }
+    input[type="email"], input[type="password"]{
+        width: 200px;
+        height: 36px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #helper_sub{
+        /* position: relative; */
+        width: 100%;
+        /* top: 10px; */
+        /* left: 2%; */
+        /* background: red; */
+    }
+    #help_info{
+        width: 100%;
+        top:5%;
+        float: left;
+        left: 0;
+    }
+    form input[type="submit"]{
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 820px){
+    form input[type="text"]{
+        width: 90%;
+    }
+    form{
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+@media only screen and (max-width: 1100px){
+    form input[type="submit"]{
+        margin-top: 5%;
+        float: left;
+    }
+    #help_info{
+        font-size: 15px;
+        width: 100%;
+    }
+}
+#pac-input {
+    position: relative;
+    margin-left: 12px;
+    text-overflow: ellipsis;
+    margin: 5px;
+    width: 90%;
+    height: 35px;
+    border-radius: 50px 50px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.116);
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 10px;
+    color: rgb(255, 255, 255);
+  }
+
+#pac-input:focus {
+    border-color: #4d90fe;
+}
