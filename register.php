@@ -1,8 +1,21 @@
 <?php
+
+$client_id = '1005797351768-ai04itde1hce5d8d3bksmt4oodlgisf1.apps.googleusercontent.com'; // Id приложения 18 40 
+$client_secret = 'p6rTCJWdY8NDnEj-zS5XsG-Z'; 
+$redirect_uri = 'http://looking.lk3.ru/google.php'; // Redirect URIs
+
+$url = 'https://accounts.google.com/o/oauth2/auth';
+
+$params = array(
+    'redirect_uri'  => $redirect_uri,
+    'response_type' => 'code',
+    'client_id'     => $client_id,
+    'scope'         => 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile'
+);
 	//exit();
     header('Content-Type: text/html; charset=utf-8');
 // Страница регистрации нового пользователя
-print_r($_POST);
+//print_r($_POST);
 // Соединямся с БД
 include('dbcon.php');
 function incrementalHash($len = 8){
@@ -55,7 +68,7 @@ if(isset($_POST['submit']))
 
        //mysqli_query($db,"INSERT INTO users SET user_login='".$login."', user_password='".$password."'");
                                                                         //INSERT INTO users(id,login,password,name,`age`, `description`, `img`, `city`) VALUES(?,?,?)
-        $DB->query("INSERT INTO users(id,login,password,name,`age`, `description`, `img`, `city`) VALUES(?,?,?,?,?,?,?,?)", array(null,$login,$password,$name,'','Дуже люблю подорожувати. Якщо хочете то заходбте до мене до дому','',$city));
+        $DB->query("INSERT INTO users(id,login,password,name,`age`, `description`, `img`, `city`) VALUES(?,?,?,?,?,?,?,?)", array(null,$login,$password,$name,'15','Дуже люблю подорожувати. Якщо хочете то заходбте до мене до дому','https://lh3.googleusercontent.com/-WDCHH0uhf7Q/WgW2nmaG9fI/AAAAAAAAATg/-ELR9oTdHq8lXlwjGisFnjBOWJl1ghkvgCEwYBhgL/w140-h139-p/9CbtATAL3Ns.jpg',$city));
        //$user_id = $DB->lastInsertId();
        
         //$api_key =  incrementalHash();
@@ -92,7 +105,7 @@ if(isset($_POST['submit']))
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Document</title>
+   <title>OutSurfing</title>
    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
    <link rel="stylesheet" href="signup.css"/>
    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
@@ -101,7 +114,7 @@ if(isset($_POST['submit']))
 <body>
 
    <p>
-       <a href="#"><span style="font-size:20px">&larr;</span> Back to Home</a>
+       <a href="/"><span style="font-size:20px">&larr;</span> Back to Home</a>
    </p>
        <form method="POST">
            <img src="logo.png" alt=""/>
@@ -116,8 +129,11 @@ if(isset($_POST['submit']))
                <div id="helper_sub">
                    <div id="help_info">
                         Sign up with
+                        <?php
+                         $link = '<p><a href="' . $url . '?' . urldecode(http_build_query($params)) . '"><i class="fab fa-google-plus"></i></a>';
+                         echo $link;
+                         ?>
                         <a href=""><i class="fab fa-facebook"></i></a>
-                        <a href=""><i class="fab fa-google-plus"></i></a>
                    </div>
                    <input type="submit" name="submit" placeholder="Submit" required/><br/>
                </div>

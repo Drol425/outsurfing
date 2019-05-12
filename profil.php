@@ -54,10 +54,10 @@ $user_ids = $query[0]['id'];
 </head>
 
 <body>
-    <header style="height: auto; margin-top: 2%; background: none;">
-        <ul id="navbar">
+    <header style="height: auto; margin-top: 10px; background: none;">
+        <ul style="margin-top: 35px;" id="navbar">
             <a href="login.php"><li>Login</li></a>
-            <a href="register.php"><li>Registration</li></a>
+            <a href="register.php"><li>Register</li></a>
             <li><img src="logo.png" height="55px" width="55px"></li>
             <a href="#"><li>Account</li></a>
             <a href=""><li>Contact</li></a>
@@ -89,89 +89,10 @@ $user_ids = $query[0]['id'];
                 </div>
             </div>
             <div style=" padding: 5px; margin-top: 20px; background-color: rgba(0,0,0, 0.5);" class="comments">
-                <h3 class="title-comments text-white">Коментарі (6)</h3>
-                <ul class="media-list">
-                    <li class="media">
-                        <div class="media-left">
-                            <a href="#"><img style="padding: 10px;" class="media-object img-rounded" src="img/avatar3.jpg" alt="..."></a>
-                        </div>
-                        <div class="media-body">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <div class="author text-white">Лілія</div>
-                                    <div class="metadata">
-                                        <span class="date text-white">8 травня 2019, 18:24</span>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    <div style="padding: 10px;" class="media-text text-justify text-white">Веселий неординарний хлопець. Показав цікаві заклади, які складно було б знайти самій у Львові. Ці кілька годин запам'ятаю надовго. Заслужена п'ятірка.</div>
-                                </div>
-                                <div class="panel-footer">
-                                    <a class="btn btn-primary" href="#">Відповісти</a>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#"><img style="padding: 10px;" class="media-object img-rounded" src="img/avatar.jpg" alt=""></a>
-                                </div>
-                                <div class="media-body">
-                                    <div class="panel panel-primary">
-                                        <div class="panel-heading">
-                                            <div class="author text-white">Богдан</div>
-                                            <div class="metadata">
-                                                <span class="date text-white">9 травня 2019, 12:48</span>
-                                            </div>
-                                        </div>
-                                        <div class="panel-body">
-                                            <div style="padding: 10px;" class="media-text text-justify text-white">Дякую. Дуже приємно. Сподіваюсь, ще зустрінемось у твоєму рідному місті.</div>
-                                            <div class="panel-footer">
-                                                <a class="btn btn-primary" href="#">Відповісти</a>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                    </div>
-                    </li>
-                    <li class="media">
-                        <div class="media-left">
-                            <a href="#"><img style="padding: 10px;" class="media-object img-rounded" src="img/avatar1.jpg" alt="..."></a>
-                        </div>
-                        <div class="media-body">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <div class="author text-white">Ілона</div>
-                                    <div class="metadata">
-                                        <span class="date text-white">11 травня 2019, 11:23</span>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    <div style="padding: 10px;" class="media-text text-justify text-white">Усе розпочиналося як нудна екскурсія, але вже через десять хвилин я відчула різницю. Вона величезна. Відтепер при відвідуванні нового міста користуватимусь тільки цим сервісом.</div>
-                                    <div class="panel-footer">
-                                        <a class="btn btn-primary" href="#">Відповісти</a>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="#"><img style="padding: 10px;" class="media-object img-rounded" src="img/avatar.jpg" alt=""></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="panel panel-primary">
-                                            <div class="panel-heading">
-                                                <div class="author text-white">Богдан</div>
-                                                <div class="metadata">
-                                                    <span class="date text-white">3 хвилини тому</span>
-                                                </div>
-                                            </div>
-                                            <div class="panel-body">
-                                                <div style="padding: 10px;" class="media-text text-justify text-white">Ахаха, нудна? Я намагався почати нашу зустріч професійно. Хоча, якщо чесно, теж не дуже люблю ці офіційності. Дякую за відгук. Працюватиму над цим.</div>
-                                                <div class="panel-footer">
-                                                    <a class="btn btn-primary" href="#">Відповісти</a>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                        </div>
-                    </li>
+                <h3 class="title-comments text-white">Відгуки (0)</h3>
+
+
+               
     </main>
     <footer class="d-flex justify-content-center bg-dark text-white">
         <p>Created by Web::chychka</p>

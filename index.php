@@ -12,29 +12,34 @@ include('dbcon.php');
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
     
     <header>
-        <ul id="navbar">
+        <ul style="padding-top: 40px;" id="navbar">
             <a href="login.php"><li>Login</li></a>
-            <a href="register.php"><li>Registr</li></a>
+            <a href="register.php"><li>Register</li></a>
             <li><img src="logo.png" height="55px" width="55px"></li>
             <a href="profil.php"><li>Account</li></a>
             <a href="/"><li>Contact</li></a>
             <div id="line"></div>
         </ul>
-        <h1>
+        <h1 style="height: 400px;" class="d-flex justify-content-center align-items-center">
             Let's start the adventure!
         </h1>
+        </form>
           <form id="search-block" name="1234" method="POST">
-            <input name="sub" class="form-control mr-sm-2" id="pac-input" type="text" placeholder="Choose your city" aria-label="Search"/>
-            <div style="display:none;" id="map"></div>
-            <input type="submit" value="Search"/>
+            <div class="form-group row justify-content-center">
+             <input style="padding: 5px; margin: 10px;" name="sub" class="form-control" id="pac-input" type="text" placeholder="Choose your city" aria-label="Search"/>
+              <div style="display:none;" id="map"></div>
+              <br>
+             <input style=" padding: 5px; margin: 10px;" type="submit" value="Search"/>
+            </div>
           </form>
     </header>
 
-    <main>
+    <main class="container">
       <?php
       if(!isset($_POST['sub'])){
           $user = $DB->query("SELECT * FROM `users`");
@@ -42,14 +47,24 @@ include('dbcon.php');
             //print_r($value);
       
       ?>
-        <div class="blocks">
-            <img src="<?php echo $value['img']; ?>" alt=""/>
-            <div class="blocks--content">
-                <a href="user.php?name=<?php echo $value['name']; ?>"><?php echo $value['name']; ?></a><span><?php echo $value['city']; ?></span>
-                <p><?php echo $value['description']; ?></p>
-                <p id="price"><?php echo $value['age']; ?>$</p>
+        <div style="padding: 20px; margin: 10px; background-color: rgba(0,0,0, 0.5);" class="card d-flex" style="max-width: 800px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img style="width: 100%" src="<?php echo $value['img']; ?>" class="rounded-circle" alt="...">
+          </div>
+          <div class="col-md-8 d-flex align-items-center">
+            <div class="card-body d-flex flex-column align-items-center">
+                <h5 class="card-title text-white">
+                  <?php echo $value['name']; ?>
+                </h5>
+                <p class="card-text text-white">
+                  <?php echo $value['city']; ?>
+                </p>
+                <p class="card-text"><small class="text-white">В мережі 3 хвилини тому</small></p>
             </div>
+          </div>
         </div>
+      </div>
         <?php
             }
       }else{
@@ -58,18 +73,29 @@ include('dbcon.php');
             //print_r($value);
       
       ?>
-      <div class="blocks">
-            <img src="<?php echo $value['img']; ?>" alt=""/>
-            <div class="blocks--content">
-                <a href="user.php?name=<?php echo $value['name']; ?>"><?php echo $value['name']; ?></a><span><?php echo $value['city']; ?></span>
-                <p><?php echo $value['description']; ?></p>
-                <p id="price"><?php echo $value['age']; ?>$</p>
+              <div style="padding: 20px; margin: 10px; background-color: rgba(0,0,0, 0.5);" class="card d-flex" style="max-width: 800px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img style="width: 100%" src="<?php echo $value['img']; ?>" class="rounded-circle" alt="...">
+          </div>
+          <div class="col-md-8 d-flex align-items-center">
+            <div class="card-body d-flex flex-column align-items-center">
+                <h5 class="card-title text-white">
+                  <?php echo $value['name']; ?>
+                </h5>
+                <p class="card-text text-white">
+                  <?php echo $value['city']; ?>
+                </p>
+                <p class="card-text"><small class="text-white">В мережі 3 хвилини тому</small></p>
             </div>
+          </div>
         </div>
+      </div>
         <?php
             }
       }
       ?>
+    </main>
     <footer>
             <img src="logo--1.png" alt=""/>
               <ul id="first--list">
@@ -284,6 +310,9 @@ include('dbcon.php');
               });
             }
           </script>
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM6GyeLm7hzLGH3TRSEmUQTYWchvuiq7E&libraries=places&callback=initAutocomplete"
                async defer></script>
 </body>

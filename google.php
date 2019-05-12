@@ -1,8 +1,8 @@
 <?php
 include('dbcon.php');
-$client_id = '948483935886-upovbebo5k0e7jvr8f4n30qv9rhf3len.apps.googleusercontent.com'; // Id приложения 18 40 
-$client_secret = 'oQEL1F_k_ARYWNCVQexpXzzE'; 
-$redirect_uri = 'http://diplom.lk3.ru/google.php'; // Redirect URIs
+$client_id = '1005797351768-ai04itde1hce5d8d3bksmt4oodlgisf1.apps.googleusercontent.com'; // Id приложения 18 40 
+$client_secret = 'p6rTCJWdY8NDnEj-zS5XsG-Z'; 
+$redirect_uri = 'http://looking.lk3.ru/google.php'; // Redirect URIs
 
 $url = 'https://accounts.google.com/o/oauth2/auth';
 
@@ -60,11 +60,14 @@ if (isset($_GET['code'])) {
                 $hash = md5(generateCode(10));
         $query =  $DB->query("SELECT COUNT(id) FROM users WHERE login=?", array($email_user));
         $login = $userInfo['email'];
+        $name = $userInfo['name'];
+        $password = generateCode();
         //print_r($query);
             if($query[0]['COUNT(id)'] == 0){
                 //echo 'Insert';
                 
-                   $DB->query("INSERT INTO users(id,login,password) VALUES(?,?,?)", array(null,$login, $userInfo['id']));
+                   //$DB->query("INSERT INTO users(id,login,password) VALUES(?,?,?)", array(null,$login, $userInfo['id']));
+                 $DB->query("INSERT INTO users(id,login,password,name,`age`, `description`, `img`, `city`) VALUES(?,?,?,?,?,?,?,?)", array(null,$login,$password,$name,'','Дуже люблю подорожувати. Якщо хочете то заходбте до мене до дому','','Харков'));
                   $last = $DB->lastInsertId();
                             setcookie("id", $last, time()+60*60*24*30);
                             setcookie("hash", $hash, time()+60*60*24*30,null,null,null,true);
