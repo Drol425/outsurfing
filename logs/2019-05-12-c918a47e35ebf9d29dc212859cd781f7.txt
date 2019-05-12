@@ -1,0 +1,20 @@
+Time : 08:13:39
+SQLSTATE[28000] [1045] Access denied for user 'h6072'@'localhost' (using password: NO)
+
+Time : 04:48:44
+SQLSTATE[28000] [1045] Access denied for user 'h6072'@'localhost' (using password: NO)
+
+Time : 04:48:38
+SQLSTATE[28000] [1045] Access denied for user 'h6072'@'localhost' (using password: NO)
+
+Time : 04:48:37
+SQLSTATE[28000] [1045] Access denied for user 'h6072'@'localhost' (using password: NO)
+
+Time : 04:48:36
+SQLSTATE[28000] [1045] Access denied for user 'h6072'@'localhost' (using password: NO)
+
+Time : 03:45:56
+SQLSTATE[28000] [1045] Access denied for user 'h6072'@'localhost' (using password: NO)
+
+Time : 03:45:49
+SQLSTATE[28000] [1045] Access denied for user 'h6072'@'localhost' (using password: NO)
